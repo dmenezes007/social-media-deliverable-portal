@@ -12,8 +12,8 @@ export default function App() {
       {/* Sidebar Navigation */}
       <aside className="w-full md:w-72 bg-white md:border-r-2 border-b-2 md:border-b-0 border-slate-900 flex flex-col sticky top-0 h-auto md:h-screen z-20 shadow-none">
         <div className="p-6 border-b-2 border-slate-900">
-          <p className="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-1">Deliverable Portal</p>
-          <h1 className="text-2xl font-black uppercase tracking-tighter leading-tight">Digital Presence<br/>Playbook</h1>
+          <p className="text-[10px] font-mono uppercase tracking-widest text-slate-500 mb-1">Portal de Entregáveis</p>
+          <h1 className="text-2xl font-black uppercase tracking-tighter leading-tight">Guia de Presença<br/>Digital</h1>
         </div>
         
         <nav className="flex-1 p-4 space-y-2 overflow-y-auto hidden md:block">
@@ -51,7 +51,7 @@ export default function App() {
         
         <div className="p-4 border-t-2 border-slate-900 hidden md:block">
           <div className="text-[10px] uppercase font-bold text-slate-500 font-mono tracking-widest text-center">
-            Designed for execution<br/>Scale with consistency
+            Feito para execução<br/>Escale com consistência
           </div>
         </div>
 
@@ -76,18 +76,18 @@ export default function App() {
         <div className="max-w-5xl mx-auto p-4 md:p-8 pb-24 space-y-6">
           <header className="flex flex-col md:flex-row justify-between items-start md:items-end border-b-2 border-slate-900 pb-4 mb-6">
             <div>
-              <p className="text-[10px] font-mono uppercase tracking-widest text-slate-500">Social Media Operating System / v1.0</p>
+              <p className="text-[10px] font-mono uppercase tracking-widest text-slate-500">Sistema Operacional de Social Media / v1.0</p>
               <h2 className="text-3xl font-black uppercase tracking-tighter mt-1">
-                {activeTab === 'planning' && 'Package: Strategy Plan'}
-                {activeTab === 'feed' && 'Package: Feed Grid Batch'}
-                {activeTab === 'stories' && 'Package: Stories Scope'}
-                {activeTab === 'production' && 'Package: Standard Ops'}
-                {activeTab === 'portfolio' && 'Package: Intro Portfolio'}
+                {activeTab === 'planning' && 'Pacote: Plano Estratégico'}
+                {activeTab === 'feed' && 'Pacote: Lote de Posts no Feed'}
+                {activeTab === 'stories' && 'Pacote: Escopo de Stories'}
+                {activeTab === 'production' && 'Pacote: Padrão Operacional'}
+                {activeTab === 'portfolio' && 'Pacote: Portfólio Introdutório'}
               </h2>
             </div>
             <div className="md:text-right mt-4 md:mt-0">
-              <p className="text-sm font-bold uppercase">Client: Expert Professional</p>
-              <p className="text-[10px] font-mono text-slate-500 italic mt-1 font-bold">Status: Ready for Delivery (Canva-Ready)</p>
+              <p className="text-sm font-bold uppercase">Cliente: Profissional Especialista</p>
+              <p className="text-[10px] font-mono text-slate-500 italic mt-1 font-bold">Status: Pronto para Entrega (Canva-Ready)</p>
             </div>
           </header>
 
@@ -194,7 +194,7 @@ function FeedView() {
           <div className="grid md:grid-cols-2 divide-y-2 md:divide-y-0 md:divide-x-2 divide-slate-900">
             {/* Visual Content Section */}
             <div className="p-4 md:p-6 bg-white flex flex-col">
-              <h2 className="bg-slate-900 text-white text-[10px] font-bold uppercase px-2 py-1 mb-4 inline-block self-start">Canva Blueprint</h2>
+              <h2 className="bg-slate-900 text-white text-[10px] font-bold uppercase px-2 py-1 mb-4 inline-block self-start">Roteiro Visual (Canva)</h2>
               
               {post.type === 'carrossel' && post.slides && (
                 <div className="flex flex-col gap-3">
@@ -203,7 +203,7 @@ function FeedView() {
                       <span className="absolute top-2 right-2 text-[10px] font-mono font-bold text-slate-400 bg-white px-1 border border-slate-200">0{s.slide}</span>
                       <p className="text-xs font-bold text-slate-900 pr-6 leading-relaxed whitespace-pre-wrap">{s.content}</p>
                       <div className="border-t border-slate-200 pt-2 mt-2">
-                        <p className="text-[9px] text-emerald-600 font-mono uppercase font-bold mb-1">Design Rules:</p>
+                        <p className="text-[9px] text-emerald-600 font-mono uppercase font-bold mb-1">Regras de Design:</p>
                         <p className="text-xs text-slate-600 font-medium">{s.design}</p>
                       </div>
                     </div>
@@ -217,7 +217,7 @@ function FeedView() {
                     {post.staticContent.text}
                   </p>
                   <div className="w-full text-left border-l-4 border-emerald-500 pl-4 py-1 mt-auto">
-                    <p className="text-[9px] text-emerald-600 font-mono uppercase font-bold mb-1">Design Rules:</p>
+                    <p className="text-[9px] text-emerald-600 font-mono uppercase font-bold mb-1">Regras de Design:</p>
                     <p className="text-[11px] text-slate-800 font-bold">{post.staticContent.design}</p>
                   </div>
                 </div>
@@ -255,7 +255,7 @@ function StoriesView() {
              <div className="absolute -right-6 -top-6 w-16 h-16 bg-emerald-500 rounded-full opacity-20 pointer-events-none"></div>
 
              <div className="border-b-2 border-slate-900 p-4 bg-slate-900 text-white">
-                <span className="text-[10px] text-emerald-400 font-mono uppercase font-bold tracking-widest block mb-1">Adaptation Origin: Post 0{idx + 1}</span>
+                <span className="text-[10px] text-emerald-400 font-mono uppercase font-bold tracking-widest block mb-1">Origem: Post 0{idx + 1}</span>
                 <h3 className="font-bold text-lg leading-tight uppercase line-clamp-1">{post.title}</h3>
              </div>
             
@@ -269,7 +269,7 @@ function StoriesView() {
             </div>
 
             <div className="border-t-2 border-slate-900 p-4 bg-emerald-100">
-              <p className="text-[10px] font-black text-slate-900 uppercase tracking-widest mb-2 border-b-2 border-slate-900 inline-block pb-0.5">Interaction Goal</p>
+              <p className="text-[10px] font-black text-slate-900 uppercase tracking-widest mb-2 border-b-2 border-slate-900 inline-block pb-0.5">Objetivo de Interação</p>
               <p className="text-sm text-slate-900 font-bold">{post.stories.interaction}</p>
             </div>
           </div>
@@ -283,7 +283,7 @@ function ProductionView() {
   return (
     <div className="flex flex-col gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="border-2 border-slate-900 bg-slate-900 p-6 md:p-10 flex flex-col text-white">
-        <h2 className="bg-emerald-500 text-black text-[11px] font-bold uppercase px-2 py-1 mb-8 inline-block self-start">Workflow Engine</h2>
+        <h2 className="bg-emerald-500 text-black text-[11px] font-bold uppercase px-2 py-1 mb-8 inline-block self-start">Fluxo de Produção</h2>
         <p className="text-lg md:text-xl leading-relaxed font-medium mb-12 border-l-4 border-emerald-500 pl-4 py-1">
           {productionStandardData.model.description}
         </p>
@@ -292,7 +292,7 @@ function ProductionView() {
           {productionStandardData.model.steps.map((step) => (
             <div key={step.step} className="border-2 border-slate-700 bg-slate-800 p-5 flex flex-col hover:border-emerald-500 transition-colors">
               <div className="flex items-center gap-2 mb-3">
-                 <span className="bg-slate-900 border border-slate-600 text-emerald-400 font-mono font-bold text-[10px] px-2 py-0.5 uppercase">Phase 0{step.step}</span>
+                 <span className="bg-slate-900 border border-slate-600 text-emerald-400 font-mono font-bold text-[10px] px-2 py-0.5 uppercase">Fase 0{step.step}</span>
               </div>
               <h3 className="font-bold text-md uppercase mb-2 leading-tight text-white">{step.title}</h3>
               <p className="text-slate-400 text-sm leading-relaxed">{step.description}</p>
@@ -301,7 +301,7 @@ function ProductionView() {
         </div>
 
         <div className="mt-12 bg-white text-slate-900 border-2 border-emerald-500 p-5 font-bold uppercase text-sm md:text-md text-center max-w-xl mx-auto tracking-wide">
-          Target Output: {productionStandardData.model.timescale}
+          Meta de Produção: {productionStandardData.model.timescale}
         </div>
       </div>
     </div>
@@ -322,7 +322,7 @@ function PortfolioView() {
         
         <div className="flex flex-col gap-12 relative z-10">
           <div className="bg-[#f8f9fa] border-2 border-slate-900 p-6 md:p-8">
-            <h4 className="bg-slate-900 text-white text-[10px] font-bold uppercase px-2 py-1 mb-6 inline-block">Design Philosophy</h4>
+            <h4 className="bg-slate-900 text-white text-[10px] font-bold uppercase px-2 py-1 mb-6 inline-block">Filosofia de Design</h4>
             <p className="text-xl md:text-2xl text-slate-800 font-bold leading-tight uppercase font-sans">
               "{portfolioData.philosophy}"
             </p>
@@ -330,7 +330,7 @@ function PortfolioView() {
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="flex flex-col">
-              <h4 className="bg-emerald-500 text-black text-[10px] font-bold uppercase px-2 py-1 mb-4 inline-block self-start">Executive Edge</h4>
+              <h4 className="bg-emerald-500 text-black text-[10px] font-bold uppercase px-2 py-1 mb-4 inline-block self-start">Diferenciais Executivos</h4>
               <ul className="text-sm font-bold text-slate-800 leading-relaxed uppercase space-y-4 border-t-2 border-slate-900 pt-4">
                 {portfolioData.differentials.split('\n').map((diff, index) => {
                   if(!diff.trim()) return null;
@@ -346,7 +346,7 @@ function PortfolioView() {
             </div>
             
             <div className="border-2 border-slate-900 bg-slate-900 text-white p-6 md:p-8 flex flex-col">
-              <h4 className="bg-white text-slate-900 text-[10px] font-bold uppercase px-2 py-1 mb-6 inline-block self-start">Simulated Case Study</h4>
+              <h4 className="bg-white text-slate-900 text-[10px] font-bold uppercase px-2 py-1 mb-6 inline-block self-start">Estudo de Caso Simulado</h4>
               <div className="text-sm leading-relaxed font-mono whitespace-pre-wrap font-medium text-slate-300">
                 {portfolioData.simulatedCase.split('\n').map((line, i) => (
                   <p key={i} className={`mb-3 ${line.startsWith('O Caso') ? 'text-emerald-400 font-bold text-lg mb-6' : ''}`}>
