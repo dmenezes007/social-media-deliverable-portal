@@ -1,1 +1,149 @@
 @import "tailwindcss";
+
+.theme-root {
+	font-family: var(--font-body);
+	background-color: var(--page-bg);
+	color: var(--text-strong);
+}
+
+.theme-root h1,
+.theme-root h2,
+.theme-root h3,
+.theme-root h4 {
+	font-family: var(--font-heading);
+}
+
+.theme-root .bg-white {
+	background-color: var(--surface-bg) !important;
+}
+
+.theme-root .bg-\[\#f8f9fa\] {
+	background-color: var(--page-bg) !important;
+}
+
+.theme-root .bg-slate-50,
+.theme-root .bg-slate-100 {
+	background-color: var(--panel-soft) !important;
+}
+
+.theme-root .bg-slate-900 {
+	background-color: var(--primary-900) !important;
+}
+
+.theme-root .bg-emerald-50,
+.theme-root .bg-emerald-100,
+.theme-root .bg-emerald-200,
+.theme-root .bg-emerald-500 {
+	background-color: var(--accent-soft) !important;
+}
+
+.theme-root .text-slate-900,
+.theme-root .text-black {
+	color: var(--text-strong) !important;
+}
+
+.theme-root .text-slate-800,
+.theme-root .text-slate-700,
+.theme-root .text-slate-600,
+.theme-root .text-slate-500,
+.theme-root .text-slate-400 {
+	color: var(--text-muted) !important;
+}
+
+.theme-root .text-white {
+	color: #fff !important;
+}
+
+.theme-root .text-emerald-600,
+.theme-root .text-emerald-500,
+.theme-root .text-emerald-400 {
+	color: var(--accent) !important;
+}
+
+.theme-root .border-slate-900,
+.theme-root .border-slate-700,
+.theme-root .border-slate-600 {
+	border-color: var(--primary-900) !important;
+}
+
+.theme-root .border-slate-300,
+.theme-root .border-slate-200,
+.theme-root .border-slate-100 {
+	border-color: color-mix(in srgb, var(--text-muted) 20%, transparent) !important;
+}
+
+.theme-root .border-emerald-500,
+.theme-root .border-l-emerald-500,
+.theme-root .hover\:border-emerald-500:hover {
+	border-color: var(--accent) !important;
+}
+
+.theme-root .editable-text {
+	cursor: text;
+	border-radius: 4px;
+	transition: box-shadow 0.15s ease;
+}
+
+.theme-root .editable-text:hover {
+	box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+.editor-modal-backdrop {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.45);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+	z-index: 50;
+}
+
+.editor-modal {
+	width: min(720px, 100%);
+	background: var(--surface-bg);
+	border: 2px solid var(--primary-900);
+	padding: 1rem;
+	box-shadow: 8px 8px 0 0 color-mix(in srgb, var(--primary-900) 50%, transparent);
+}
+
+.editor-modal h3 {
+	margin: 0 0 0.75rem;
+	font-size: 0.95rem;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: var(--text-strong);
+}
+
+.editor-modal textarea {
+	width: 100%;
+	resize: vertical;
+	border: 2px solid var(--primary-900);
+	background: var(--page-bg);
+	color: var(--text-strong);
+	padding: 0.75rem;
+	font-family: var(--font-body);
+	font-size: 0.92rem;
+}
+
+.editor-modal-actions {
+	margin-top: 0.75rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.editor-modal-actions button {
+	border: 2px solid var(--primary-900);
+	background: var(--surface-bg);
+	color: var(--text-strong);
+	padding: 0.5rem 0.75rem;
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.editor-modal-actions button:first-child {
+	background: var(--primary-900);
+	color: #fff;
+}
