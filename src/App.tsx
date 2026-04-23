@@ -4,8 +4,8 @@ import { planData, postsData, productionStandardData, portfolioData } from './da
 
 type Tab = 'planning' | 'feed' | 'stories' | 'production' | 'portfolio';
 
-type PaletteId = 'corporativo' | 'oceano' | 'terracota';
-type FontId = 'moderno' | 'editorial' | 'impacto';
+type PaletteId = 'corporativo' | 'oceano' | 'terracota' | 'grafite' | 'floresta';
+type FontId = 'moderno' | 'editorial' | 'impacto' | 'classico' | 'tecnico';
 
 type TextEditorState = {
   id: string;
@@ -62,6 +62,32 @@ const PALETTES: Record<PaletteId, {
       '--panel-soft': '#fef3e7',
     },
   },
+  grafite: {
+    label: 'Grafite sofisticado',
+    vars: {
+      '--page-bg': '#f4f5f7',
+      '--surface-bg': '#ffffff',
+      '--primary-900': '#1f2937',
+      '--text-strong': '#111827',
+      '--text-muted': '#4b5563',
+      '--accent': '#f59e0b',
+      '--accent-soft': '#fef3c7',
+      '--panel-soft': '#e5e7eb',
+    },
+  },
+  floresta: {
+    label: 'Floresta executiva',
+    vars: {
+      '--page-bg': '#f3f8f4',
+      '--surface-bg': '#ffffff',
+      '--primary-900': '#1d3b2f',
+      '--text-strong': '#163126',
+      '--text-muted': '#355648',
+      '--accent': '#16a34a',
+      '--accent-soft': '#dcfce7',
+      '--panel-soft': '#e7f3ea',
+    },
+  },
 };
 
 const FONTS: Record<FontId, { label: string; body: string; heading: string }> = {
@@ -79,6 +105,16 @@ const FONTS: Record<FontId, { label: string; body: string; heading: string }> = 
     label: 'Impacto condensado',
     body: '"Trebuchet MS", "Segoe UI", sans-serif',
     heading: 'Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif',
+  },
+  classico: {
+    label: 'Clássico institucional',
+    body: 'Cambria, "Times New Roman", serif',
+    heading: '"Book Antiqua", Cambria, serif',
+  },
+  tecnico: {
+    label: 'Técnico limpo',
+    body: 'Tahoma, Verdana, sans-serif',
+    heading: '"Franklin Gothic Medium", Tahoma, sans-serif',
   },
 };
 
@@ -355,32 +391,54 @@ function PlanningView({
     <div className="flex flex-col gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="border-2 border-slate-900 p-4 md:p-6 bg-white">
         <h2 className="bg-slate-900 text-white text-[11px] font-bold uppercase px-2 py-1 mb-4 inline-block">Change-and-Play</h2>
-        <div className="grid md:grid-cols-2 gap-4">
-          <label className="flex flex-col gap-2">
-            <span className="text-xs font-bold uppercase text-slate-600">Tipografia global</span>
-            <select
-              value={fontId}
-              onChange={(e) => setFontId(e.target.value as FontId)}
-              className="bg-[#f8f9fa] border-2 border-slate-900 p-2 text-sm font-semibold"
-            >
-              {(Object.keys(FONTS) as FontId[]).map((key) => (
-                <option key={key} value={key}>{FONTS[key].label}</option>
-              ))}
-            </select>
-          </label>
+        <div className="space-y-6">
+          <div>
+            <span className="text-xs font-bold uppercase text-slate-600 block mb-3">Tipografia global</span>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
+              {(Object.keys(FONTS) as FontId[]).map((key) => {
+                const isActive = key === fontId;
+                return (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => setFontId(key)}
+                    className={`border-2 p-3 text-left transition-colors ${isActive ? 'border-slate-900 bg-slate-900 text-white' : 'border-slate-300 bg-slate-50 hover:border-slate-900 text-slate-900'}`}
+                  >
+                    <p className="text-[10px] font-bold uppercase tracking-wider mb-2">{FONTS[key].label}</p>
+                    <p style={{ fontFamily: FONTS[key].heading }} className="text-lg leading-none mb-1">Aa</p>
+                    <p style={{ fontFamily: FONTS[key].body }} className="text-[11px] leading-tight">Preview tipográfico</p>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
 
-          <label className="flex flex-col gap-2">
-            <span className="text-xs font-bold uppercase text-slate-600">Paleta de cores global</span>
-            <select
-              value={paletteId}
-              onChange={(e) => setPaletteId(e.target.value as PaletteId)}
-              className="bg-[#f8f9fa] border-2 border-slate-900 p-2 text-sm font-semibold"
-            >
-              {(Object.keys(PALETTES) as PaletteId[]).map((key) => (
-                <option key={key} value={key}>{PALETTES[key].label}</option>
-              ))}
-            </select>
-          </label>
+          <div>
+            <span className="text-xs font-bold uppercase text-slate-600 block mb-3">Paleta de cores global</span>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
+              {(Object.keys(PALETTES) as PaletteId[]).map((key) => {
+                const palette = PALETTES[key].vars;
+                const isActive = key === paletteId;
+                return (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => setPaletteId(key)}
+                    className={`border-2 p-3 text-left transition-colors ${isActive ? 'border-slate-900 bg-slate-900 text-white' : 'border-slate-300 bg-slate-50 hover:border-slate-900 text-slate-900'}`}
+                  >
+                    <p className="text-[10px] font-bold uppercase tracking-wider mb-2">{PALETTES[key].label}</p>
+                    <div className="flex gap-1 mb-2">
+                      <span className="w-5 h-5 border border-slate-300" style={{ backgroundColor: palette['--primary-900'] }} />
+                      <span className="w-5 h-5 border border-slate-300" style={{ backgroundColor: palette['--accent'] }} />
+                      <span className="w-5 h-5 border border-slate-300" style={{ backgroundColor: palette['--accent-soft'] }} />
+                      <span className="w-5 h-5 border border-slate-300" style={{ backgroundColor: palette['--panel-soft'] }} />
+                    </div>
+                    <p className="text-[11px] leading-tight">Aplicação global imediata</p>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
         </div>
         <p className="text-xs font-medium text-slate-600 mt-4">
           Clique em qualquer texto destacado para editar o conteúdo. Isso permite personalização contínua sem alterar código.
